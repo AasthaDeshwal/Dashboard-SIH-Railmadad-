@@ -1,0 +1,24 @@
+/* Ensure the overall layout is properly set */
+.app {
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Prevent any overflow issues at the root level */
+  }
+  
+  .sidebar {
+    width: 250px; /* Default width for the sidebar */
+    height: 100vh;
+    position: fixed; /* Keep the sidebar fixed */
+    top: 0;
+    left: 0;
+    z-index: 100; /* Ensure the sidebar stays above the content */
+  }
+  
+  .content {
+    margin-left: 250px; /* Adjusted based on the sidebar width */
+    width: calc(100% - 250px);
+    height: 100vh;
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    transition: margin-left 0.3s; /* Smooth transition when sidebar collapses */
+  }
+  

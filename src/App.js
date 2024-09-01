@@ -1,20 +1,20 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Topbar from "./scenes/global/Topbar";
-import Sidebar from "./scenes/global/Sidebar";
-import Dashboard from "./scenes/dashboard";
-import Team from "./scenes/team";
-import Invoices from "./scenes/invoices";
-import Contacts from "./scenes/contacts";
-import Bar from "./scenes/bar";
-import Form from "./scenes/form";
-import Line from "./scenes/line";
-import Pie from "./scenes/pie";
-import FAQ from "./scenes/faq";
-import Geography from "./scenes/geography";
+import Topbar from "./scenes/Topbar";
+import Sidebar from "./scenes/Sidebar";
+import Summary from "./components/Summary/Summary";
+import UserProfile from "./components/UserProfile";
+import TicketingIssues from "./components/Departments/TicketingIssues";
+import TrainServices from "./components/Departments/TrainServices";
+import StationFacilities from "./components/Departments/StationFacilities";
+import Security from "./components/Departments/Security";
+import CateringServices from "./components/Departments/CateringServices";
+import LuggageAndLostProperty from "./components/Departments/LuggageAndLostProperty";
+import MedicalAssistance from "./components/Departments/MedicalAssistance";
+import Miscellaneous from "./components/Departments/Miscellaneous";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
-import Calendar from "./scenes/calendar/calendar";
+import "./App.css";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -29,17 +29,17 @@ function App() {
           <main className="content">
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/team" element={<Team />} />
-              <Route path="/contacts" element={<Contacts />} />
-              <Route path="/invoices" element={<Invoices />} />
-              <Route path="/form" element={<Form />} />
-              <Route path="/bar" element={<Bar />} />
-              <Route path="/pie" element={<Pie />} />
-              <Route path="/line" element={<Line />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/calendar" element={<Calendar />} />
-              <Route path="/geography" element={<Geography />} />
+              <Route path="/" element={<Summary />} />
+              <Route path="/user-profile" element={<UserProfile />} />
+              <Route path="/summary" element={<Summary />} />
+              <Route path="/departments/ticketing-issues" element={<TicketingIssues />} />
+              <Route path="/departments/train-services" element={<TrainServices />} />
+              <Route path="/departments/station-facilities" element={<StationFacilities />} />
+              <Route path="/departments/security" element={<Security />} />
+              <Route path="/departments/catering-services" element={<CateringServices />} />
+              <Route path="/departments/luggage-and-lost-property" element={<LuggageAndLostProperty />} />
+              <Route path="/departments/medical-assistance" element={<MedicalAssistance />} />
+              <Route path="/departments/miscellaneous" element={<Miscellaneous />} />
             </Routes>
           </main>
         </div>
